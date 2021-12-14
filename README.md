@@ -6,3 +6,5 @@
 - feature 開発完了
 - Issue に書いた内容のタスクが完了したので、develop ブランチにマージコミットする
 - main ブランチには直接 push しない
+
+- yarn add node-sass で、css ファイルの記述を sass 形式で書くことができる
