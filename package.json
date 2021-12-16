@@ -36,5 +36,8 @@
     ]
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.45.0"
+  }
 }
