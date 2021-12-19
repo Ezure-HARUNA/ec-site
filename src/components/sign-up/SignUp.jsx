@@ -18,12 +18,14 @@ class SignUp extends React.Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
     }
+
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
@@ -31,6 +33,7 @@ class SignUp extends React.Component {
       );
 
       await createUserProfileDocument(user, { displayName });
+
       this.setState({
         displayName: "",
         email: "",
@@ -44,6 +47,7 @@ class SignUp extends React.Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
+
     this.setState({ [name]: value });
   };
 
@@ -60,6 +64,7 @@ class SignUp extends React.Component {
             value={displayName}
             onChange={this.handleChange}
             label="Display Name"
+            required
           />
           <FormInput
             type="email"
@@ -67,6 +72,7 @@ class SignUp extends React.Component {
             value={email}
             onChange={this.handleChange}
             label="Email"
+            required
           />
           <FormInput
             type="password"
@@ -74,6 +80,7 @@ class SignUp extends React.Component {
             value={password}
             onChange={this.handleChange}
             label="Password"
+            required
           />
           <FormInput
             type="password"
@@ -81,8 +88,9 @@ class SignUp extends React.Component {
             value={confirmPassword}
             onChange={this.handleChange}
             label="Confirm Password"
+            required
           />
-          <CustomButton type="button">SIGN UP</CustomButton>
+          <CustomButton type="submit">SIGN UP</CustomButton>
         </form>
       </div>
     );

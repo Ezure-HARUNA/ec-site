@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.styles.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 // import firebase from "firebase/compat/app";
 import { auth } from "../../firebase/firebase.utils";
@@ -27,9 +28,14 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </Link>
         )}
+        {/* <Cart currentUser={currentUser} /> */}
       </div>
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);
