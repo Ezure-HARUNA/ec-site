@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 // import firebase from "firebase/compat/app";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/CartIcon";
+import CartDropDown from "../cart-dropdown/CartDropDown";
 
 const Header = ({ currentUser }) => {
   return (
@@ -32,6 +33,7 @@ const Header = ({ currentUser }) => {
         <CartIcon />
         {/* <Cart currentUser={currentUser} /> */}
       </div>
+      <CartDropDown />
     </div>
   );
 };
