@@ -4,9 +4,9 @@ import CollectionItem from "../../cart-item/CartItem";
 import { selectCollection } from "../../../redux/shop/shop.selectors";
 import "./Collection.styles.scss";
 
-const Collection = ({ match }) => {
+const Collection = ({ collection }) => {
   // const { title, items } = collection;
-  console.log(match.params.collectionId);
+  console.log(collection);
   return (
     <div className="collection-page">
       <h2 className="title">collection page</h2>
